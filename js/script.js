@@ -8,3 +8,8 @@ let availablejobsCount = getbyID('availablejobsCount')
 let btnofAll = getbyID('btnofAll');
 let btnofInterview = getbyID('btnofInterview');
 let btnofRejected = getbyID('btnofRejected');
+
+let delBtn = getbyID('delBtn');
+
+let cardofInterview = getbyID('cardofInterview');
+let cardofRejected = getbyID('cardofRejected');
