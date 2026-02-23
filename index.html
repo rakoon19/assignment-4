@@ -56,17 +56,17 @@
 
             <div class="card card-body shadow-md bg-base-100 box-color">
                 <h2 class="card-title font-medium color2 text-[14px] box-color">Total</h2>
-                <span class="font-bold text-[24px] box-color">8</span>
+                <span class="font-bold text-[24px] box-color" id="scoreofTotal">0</span>
             </div>
 
             <div class="card card-body shadow-md bg-base-100 box-color">
                 <h2 class="card-title font-medium color2 text-[14px] box-color">Interview</h2>
-                <span class="font-bold text-[24px] text-green-500 box-color">0</span>
+                <span class="font-bold text-[24px] text-green-500 box-color" id="scoreofInterview">0</span>
             </div>
 
             <div class="card card-body shadow-md bg-base-100 box-color">
                 <h2 class="card-title font-medium color2 text-[14px] box-color">Rejected</h2>
-                <span class="font-bold text-[24px] text-red-500 box-color">0</span>
+                <span class="font-bold text-[24px] text-red-500 box-color" id="scoreofRejected">0</span>
             </div>
 
         </div>
@@ -81,7 +81,7 @@
         <div class="flex place-content-between">
             <p class="color1 text-[20px] font-bold">Available Jobs</p>
 
-            <h2 class="card-title font-medium color2 text-[16px] opacity-75"><span>0</span>jobs</h2>
+            <h2 class="card-title font-medium color2 text-[16px] opacity-75"><span id="availablejobsCount">0</span>jobs</h2>
         </div>
 
 
@@ -112,7 +112,9 @@
         <p class="box-color text-[16px] color3 regular">Check back soon for new job opportunities</p>
     </div>
     </section>
-    
+
+
+    <script src="./js/common-funcs.js"></script>
     <script src="./js/script.js"></script>
 </body>
 </html>
