@@ -10,13 +10,21 @@ btnofRejected.addEventListener('click', function (){
 
 
 // delBtn
-
-delBtn.addEventListener('click', function(){
-    jobCard.innerHTML = '';
-    lenofJobCards -= 1;
-    if(lenofJobCards == 0){
-        jobcardContainer.innerHTML = '';
-        jobCards.innerHTML = '';
+document.querySelectorAll('.delBtn').forEach(btn => {
+  btn.addEventListener('click', function() {
+    this.closest('.jobCard').remove();
+    let remaining = document.querySelectorAll('.jobCard').length;
+    scoreofTotal.innerText = remaining;
+    if(remaining === 0){
         nojobsAvail.classList.remove('hidden');
     }
+  });
 });
+
+// all
+
+btnofAll.addEventListener('click', function(){
+    allCards.forEach(card => {
+        card.classList.remove('hidden');
+    })
+})

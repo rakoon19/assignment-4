@@ -14,16 +14,15 @@ let delBtn = getbyID('delBtn');
 let cardofInterview = getbyID('cardofInterview');
 let cardofRejected = getbyID('cardofRejected');
 
-let jobcardContainer = getbyID('job-card-container');
 let jobCards = getbyID('job-cards');
 let jobCard = getbyID('job-card');
 
-let nojobsAvail = getbyID('nojobsAvail');
+let nojobsAvail = getbyID('nojobs');
 
 
-// total cards
-let lenofJobCards = jobcardContainer.children.length;
-scoreofTotal.innerText = lenofJobCards;
+// total score
+let allCards = document.querySelectorAll('.jobCard');
+scoreofTotal.innerText = document.querySelectorAll('.jobCard').length;
 // available jobs Count
 // availablejobsCount.innerText = `${only in all section} of ${lenofJobCards}`
 
