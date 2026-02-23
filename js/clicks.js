@@ -28,3 +28,33 @@ btnofAll.addEventListener('click', function(){
         card.classList.remove('hidden');
     })
 })
+
+btnofInterview.forEach(btn => { 
+  btn.addEventListener('click', function(){
+    statuss.forEach(el => {
+      if( el.innerText = 'Interviewed'){
+        // allCards.classList.add('hidden');
+        el.classList.remove('hidden');
+      }
+    })
+  })
+})
+
+
+document.querySelectorAll('.cardofInterview').forEach(btn => {
+  btn.addEventListener('click', function(){
+    // this.closest('.statuss').innerText = 'Interviewed';
+    statuss.forEach(el => {
+      el.innerText = 'Interviewed';
+    });
+  });
+});
+
+document.querySelectorAll('.cardofRejected').forEach(btn => {
+  btn.addEventListener('click', function(){
+    // this.closest('.statuss').innerText = 'Interviewed';
+    statuss.forEach(el => {
+      el.innerText = 'Rejected';
+    });
+  });
+});

@@ -19,6 +19,9 @@ let jobCard = getbyID('job-card');
 
 let nojobsAvail = getbyID('nojobs');
 
+// status
+
+const statuss = document.querySelectorAll('.statuss');
 
 // total score
 let allCards = document.querySelectorAll('.jobCard');
