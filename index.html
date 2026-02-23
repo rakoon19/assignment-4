@@ -106,11 +106,11 @@
        
     </section>
 
-    <section class="job-cards">
+    <section class="job-cards" id="job-cards">
 
         <div class="flex flex-col gap-4" id="job-card-container">
           <!--v every job cards -->
-            <div class="flex flex-col gap-5 card card-body shadow-md bg-base-100 box-color p-6">
+            <div class="flex flex-col gap-5 card card-body shadow-md bg-base-100 box-color p-6" id="job-card">
 
                 <div class="flex place-content-between box-color">
                     <div class="flex flex-col box-color">
@@ -155,7 +155,7 @@ Full-time
 
     
     <!-- when no jobs are available -->
-    <section class="flex flex-col box-color py-15 px-10 items-center place-content-center gap-5 hidden">
+    <section class="flex flex-col box-color py-15 px-10 items-center place-content-center gap-5 hidden" id="nojobs">
     <div class="img w-25 h-25 box-color ">
         <img src="assets/jobs.png" alt="" class="box-color">
     </div>
@@ -167,6 +167,7 @@ Full-time
 
 
     <script src="./js/common-funcs.js"></script>
-    <script src="./js/script.js"></script>
+    <script src="./js/clicks.js"></script>
+    <script src="./js/accessofvars.js"></script>
 </body>
 </html>

@@ -15,9 +15,15 @@ let cardofInterview = getbyID('cardofInterview');
 let cardofRejected = getbyID('cardofRejected');
 
 let jobcardContainer = getbyID('job-card-container');
+let jobCards = getbyID('job-cards');
+let jobCard = getbyID('job-card');
 
+let nojobsAvail = getbyID('nojobsAvail');
 
 
 // total cards
 let lenofJobCards = jobcardContainer.children.length;
 scoreofTotal.innerText = lenofJobCards;
+// available jobs Count
+// availablejobsCount.innerText = `${only in all section} of ${lenofJobCards}`
+
