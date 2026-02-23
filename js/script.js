@@ -13,3 +13,11 @@ let delBtn = getbyID('delBtn');
 
 let cardofInterview = getbyID('cardofInterview');
 let cardofRejected = getbyID('cardofRejected');
+
+let jobcardContainer = getbyID('job-card-container');
+
+
+
+// total cards
+let lenofJobCards = jobcardContainer.children.length;
+scoreofTotal.innerText = lenofJobCards;
