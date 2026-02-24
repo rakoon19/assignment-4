@@ -1,39 +1,77 @@
+function getbyID(x) {
+    return document.getElementById(x);
+}
 // accessing variables
 let scoreofTotal = getbyID('scoreofTotal');
 let scoreofInterview = getbyID('scoreofInterview');
 let scoreofRejected = getbyID('scoreofRejected');
+let nojobsAvail = getbyID('nojobs');
 let availablejobsCount = getbyID('availablejobsCount');
 
 // total 
 
 function updateScore() {
     //total
-    let lenofCards = getbyID('job-cards').children.length;
-    scoreofTotal.innerText = lenofCards;
+    let lenoftCards = getbyID('job-cards').children.length;
+    scoreofTotal.innerText = lenoftCards;
     //interview and rejected
-    iAndrUpdateScore();
-
+    interviewandRejectedUpdateScore();
+    rejectedUpdateScore();
 }
 
-function iAndrUpdateScore() { 
+function interviewandRejectedUpdateScore() { 
     let countInterview = 0;
-    let countRejected = 0;
-    document.querySelectorAll('.parentofstatus').forEach( card => {
-        let statussEL = card.querySelector('.statuss');
-        if( statussEL.innerText.includes('Interviewed')){
+    document.querySelectorAll('.parentofstatus').forEach(card => {
+        let statusEl = card.querySelector('.statuss');
+        if(statusEl.innerText.includes('Interviewed')){
             countInterview++;   
         }
     });
-    document.querySelectorAll('.parentofstatus').forEach( stat => {
-        let statussEL = stat.querySelector('.statuss');
-        if( statussEL.innerText.includes('Rejected')){
+    scoreofInterview.innerText = countInterview;
+
+    let countRejected = 0;
+    document.querySelectorAll('.parentofstatus').forEach(card => {
+        let statusEl = card.querySelector('.statuss');
+        if(statusEl.innerText.includes('Rejected')){
             countRejected++;
         }
-});
-    console.log('i:', countInterview);
-    console.log('r:', countRejected);
-    scoreofInterview.innerText = countInterview;
+    });
     scoreofRejected.innerText = countRejected;
+
+    // no jobs available 
+    //for total
+    if( lenoftCards === 0 ){
+        nojobsAvail.classList.remove('hidden')
+    }else {
+        nojobsAvail.classList.add('hidden')
+    }
+    //for interview
+    btnofInterview.addEventListener('click', function(){
+        if( scoreofInterview === 0 ){
+            nojobsAvail.classList.remove('hidden')
+        }else {
+            nojobsAvail.classList.add('hidden')
+        }
+    })
+    //for rejected
+    btnofRejected.addEventListener('click', function(){
+        if( scoreofRejected === 0 ){
+            nojobsAvail.classList.remove('hidden')
+        }else {
+            nojobsAvail.classList.add('hidden')
+        }
+    })
+
+
+
+
 }
+
+
+
+
+
+
 updateScore();
-iAndrUpdateScore();
+interviewandRejectedUpdateScore();
+rejectedUpdateScore();

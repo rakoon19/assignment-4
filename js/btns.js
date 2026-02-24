@@ -1,11 +1,12 @@
 let interviewBTN = document.querySelectorAll('.cardofInterview');
+//active filter btns
 
 interviewBTN.forEach( btn => {
     btn.addEventListener('click', function(){
         let card = this.closest('.jobCard');
         let statussEL = card.querySelector('.statuss');
         statussEL.innerText = 'Interviewed';
-        
+
         updateScore();
         });
 });
@@ -18,6 +19,7 @@ RejectedBTN.forEach( btn => {
         let card = this.closest('.jobCard');
         let statussEL = card.querySelector('.statuss');
         statussEL.innerText = 'Rejected';
+
         updateScore();
     });
 });
