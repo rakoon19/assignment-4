@@ -6,9 +6,10 @@ interviewBTN.forEach( btn => {
        let statussEL = card.querySelector('.statuss');
         statussEL.innerText = 'Interviewed';
         });
-    });
-    updateScore();
+        updateScore();
+        });
 });
+    
 
 let RejectedBTN = document.querySelectorAll('.cardofRejected');
 
@@ -18,6 +19,13 @@ RejectedBTN.forEach( btn => {
        let statussEL = card.querySelector('.statuss');
         statussEL.innerText = 'Rejected';
         });
+        updateScore();
     });
-    updateScore();
 });
+
+
+
+
+
+
+
