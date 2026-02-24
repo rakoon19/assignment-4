@@ -51,3 +51,4 @@ function updateNoJob() {
 
 updateScore();
 interviewandRejectedUpdateScore();
+applyCurrentFilter();

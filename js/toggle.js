@@ -5,12 +5,16 @@ let btnofRejected = getbyID('btnofRejected');
 let btnofALL = getbyID('btnofALL');
 
 function availJob(clickedBTN) {
-    if ( clickedBTN.innerText.includes('All')){
-        availablejobsCount.innerText = `${getbyID('job-cards').children.length}`
-    }else if( clickedBTN.innerText.includes('Interview')){
-        availablejobsCount.innerText = `${scoreofInterview.innerText} of ${getbyID('job-cards').children.length}`;
-    }else if( clickedBTN.innerText.includes('Rejected')){
-        availablejobsCount.innerText = `${scoreofRejected.innerText} of ${getbyID('job-cards').children.length}`;
+    let totalJobs = getbyID('job-cards').children.length;
+    
+    if (clickedBTN.innerText.includes('All')){
+        availablejobsCount.innerText = totalJobs;
+    } else if(clickedBTN.innerText.includes('Interview')){
+        let count = parseInt(scoreofInterview.innerText);
+        availablejobsCount.innerText = count >= 1 ? `${count} of ${totalJobs}` : count;
+    } else if(clickedBTN.innerText.includes('Rejected')){
+        let count = parseInt(scoreofRejected.innerText);
+        availablejobsCount.innerText = count >= 1 ? `${count} of ${totalJobs}` : count;
     }
 }
 
