@@ -11,6 +11,7 @@ btnofInterview.addEventListener('click', function(){
             card.classList.add('hidden');
         }
     });
+    updateNoJob();
 });
 let btnofRejected = getbyID('btnofRejected');
 
@@ -23,12 +24,14 @@ btnofRejected.addEventListener('click', function(){
             card.classList.add('hidden');
         }
     });
+    updateNoJob();
 });
 
 let btnofALL = getbyID('btnofALL');
 
 btnofALL.addEventListener('click', function(){
-    jobCardParent.forEach( card => {
+    jobCardParent.forEach( card => {    
         card.classList.remove('hidden');
     });
+    updateNoJob();
 });

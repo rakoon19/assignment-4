@@ -16,7 +16,7 @@ function updateScore() {
     scoreofTotal.innerText = lenoftCards;
     //interview and rejected
     interviewandRejectedUpdateScore();
-    rejectedUpdateScore();
+    updateNoJob();
 }
 
 function interviewandRejectedUpdateScore() { 
@@ -37,41 +37,19 @@ function interviewandRejectedUpdateScore() {
         }
     });
     scoreofRejected.innerText = countRejected;
-
-    // no jobs available 
-    //for total
-    if( lenoftCards === 0 ){
-        nojobsAvail.classList.remove('hidden')
-    }else {
-        nojobsAvail.classList.add('hidden')
-    }
-    //for interview
-    btnofInterview.addEventListener('click', function(){
-        if( scoreofInterview === 0 ){
-            nojobsAvail.classList.remove('hidden')
-        }else {
-            nojobsAvail.classList.add('hidden')
-        }
-    })
-    //for rejected
-    btnofRejected.addEventListener('click', function(){
-        if( scoreofRejected === 0 ){
-            nojobsAvail.classList.remove('hidden')
-        }else {
-            nojobsAvail.classList.add('hidden')
-        }
-    })
-
-
-
-
 }
 
-
-
+function updateNoJob() {
+    let visibleCards = document.querySelectorAll('.jobCard:not(.hidden)');
+    
+    if(visibleCards.length === 0) {
+        nojobsAvail.classList.remove('hidden');
+    } else {
+        nojobsAvail.classList.add('hidden');
+    }
+}
 
 
 
 updateScore();
 interviewandRejectedUpdateScore();
-rejectedUpdateScore();
