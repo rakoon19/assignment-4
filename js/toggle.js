@@ -1,7 +1,8 @@
 let jobCardParent = document.querySelectorAll('.jobCard');
 
 let btnofInterview = getbyID('btnofInterview');
-
+let btnofRejected = getbyID('btnofRejected');
+let btnofALL = getbyID('btnofALL');
 
 function availJob(clickedBTN) {
     if ( clickedBTN.innerText.includes('All')){
@@ -12,6 +13,7 @@ function availJob(clickedBTN) {
         availablejobsCount.innerText = `${scoreofRejected.innerText} of ${getbyID('job-cards').children.length}`;
     }
 }
+
 function btnAttribute(clickedBTN) {
     let allBTN = [btnofALL, btnofInterview, btnofRejected];
     allBTN.forEach( btn => { 
@@ -22,40 +24,47 @@ function btnAttribute(clickedBTN) {
     clickedBTN.classList.add('btn-primary');
     availJob(clickedBTN);
 }
-btnofInterview.addEventListener('click', function(){
-    jobCardParent.forEach(card => {
-        let statussEL = card.querySelector('.statuss');
-        if( statussEL.innerText.includes('Interviewed') ){
-            card.classList.remove('hidden');
-        }else {
-            card.classList.add('hidden');
-        }
-    });
 
+function applyCurrentFilter() {
+    if(btnofInterview.classList.contains('btn-primary')) {
+        jobCardParent.forEach(card => {
+            let statussEL = card.querySelector('.statuss');
+            if( statussEL.innerText.includes('Interviewed') ){
+                card.classList.remove('hidden');
+            }else {
+                card.classList.add('hidden');
+            }
+        });
+    } else if(btnofRejected.classList.contains('btn-primary')) {
+        jobCardParent.forEach(card => {
+            let statussEL = card.querySelector('.statuss');
+            if( statussEL.innerText.includes('Rejected') ){
+                card.classList.remove('hidden');
+            }else {
+                card.classList.add('hidden');
+            }
+        });
+    } else {
+        jobCardParent.forEach( card => {    
+            card.classList.remove('hidden');
+        });
+    }
     updateNoJob();
+}
+
+btnofInterview.addEventListener('click', function(){
     btnAttribute(this);
+    applyCurrentFilter();
 });
-let btnofRejected = getbyID('btnofRejected');
 
 btnofRejected.addEventListener('click', function(){
-    jobCardParent.forEach(card => {
-        let statussEL = card.querySelector('.statuss');
-        if( statussEL.innerText.includes('Rejected') ){
-            card.classList.remove('hidden');
-        }else {
-            card.classList.add('hidden');
-        }
-    });
-    updateNoJob();
     btnAttribute(this);
+    applyCurrentFilter();
 });
-
-let btnofALL = getbyID('btnofALL');
 
 btnofALL.addEventListener('click', function(){
-    jobCardParent.forEach( card => {    
-        card.classList.remove('hidden');
-    });
-    updateNoJob();
     btnAttribute(this);
+    applyCurrentFilter();
 });
+
+btnAttribute(btnofALL);

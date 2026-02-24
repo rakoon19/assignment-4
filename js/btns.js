@@ -13,7 +13,13 @@ interviewBTN.forEach( btn => {
         statussEL.parentElement.parentElement.classList.add('interviewed-border');
         
         updateScore();
-        availJob(this);
+        if(btnofInterview.classList.contains('btn-primary')){
+            availJob(btnofInterview);
+        } else if(btnofRejected.classList.contains('btn-primary')){
+            availJob(btnofRejected);
+        } else {
+            availJob(btnofALL);
+}
         });
 });
     
@@ -32,13 +38,14 @@ RejectedBTN.forEach( btn => {
         statussEL.parentElement.parentElement.classList.add('rejected-border');
         
         updateScore();
-        availJob(this);
+        if(btnofInterview.classList.contains('btn-primary')){
+            availJob(btnofInterview);
+        } else if(btnofRejected.classList.contains('btn-primary')){
+            availJob(btnofRejected);
+        } else {
+            availJob(btnofALL);
+}
     });
 });
-
-
-
-
-
 
 
