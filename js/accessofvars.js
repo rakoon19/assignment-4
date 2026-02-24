@@ -1,8 +1,4 @@
-// accessing variables
-let scoreofTotal = getbyID('scoreofTotal');
-let scoreofInterview = getbyID('scoreofInterview');
-let scoreofRejected = getbyID('scoreofRejected');
-let availablejobsCount = getbyID('availablejobsCount')
+
 
 // accessing btns
 let btnofAll = getbyID('btnofAll');
@@ -21,10 +17,10 @@ let nojobsAvail = getbyID('nojobs');
 
 // status
 
-const statuss = document.querySelectorAll('.statuss');
+
 
 // total score
-let allCards = document.querySelectorAll('.jobCard');
+
 scoreofTotal.innerText = document.querySelectorAll('.jobCard').length;
 // available jobs Count
 // availablejobsCount.innerText = `${only in all section} of ${lenofJobCards}`
