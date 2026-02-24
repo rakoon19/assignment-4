@@ -6,7 +6,6 @@ interviewBTN.forEach( btn => {
         let card = this.closest('.jobCard');
         let statussEL = card.querySelector('.statuss');
         statussEL.innerText = 'Interviewed';
-
         updateScore();
         });
 });
@@ -19,7 +18,6 @@ RejectedBTN.forEach( btn => {
         let card = this.closest('.jobCard');
         let statussEL = card.querySelector('.statuss');
         statussEL.innerText = 'Rejected';
-
         updateScore();
     });
 });

@@ -5,5 +5,6 @@ deleteBTN.forEach( del => {
         // this.closest('.jobCard').remove();
         del.parentElement.parentElement.remove();
         updateScore();
+        availJob();
     })
 })

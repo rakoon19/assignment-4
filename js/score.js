@@ -28,7 +28,6 @@ function interviewandRejectedUpdateScore() {
         }
     });
     scoreofInterview.innerText = countInterview;
-
     let countRejected = 0;
     document.querySelectorAll('.parentofstatus').forEach(card => {
         let statusEl = card.querySelector('.statuss');
@@ -48,7 +47,6 @@ function updateNoJob() {
         nojobsAvail.classList.add('hidden');
     }
 }
-
 
 
 updateScore();
